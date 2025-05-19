@@ -1,0 +1,4 @@
+com\java\tekarch\sfdc\pom\tests\runTest.class
+cucumber\java\RunCucumberTest.class
+com\java\tekarch\sfdc\pom\tests\LoginPageTest.class
+cucumber\java\stepdefs\loginStep.class

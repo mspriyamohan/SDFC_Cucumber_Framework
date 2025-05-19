@@ -1,0 +1,54 @@
+Feature: Login
+
+ Scenario: Verify valid login
+  When user enters valid username and password
+	Then user should see home page
+
+Feature:	Login Error
+
+ Scenario: Verify valid login error message
+ 	When user enter valid user name and password is not provided
+ 	Then user should see appropriate error message
+ 	
+Feature: Test the remember username check box 
+
+ Scenario: Validate the user name displayed in user name field
+ 	When user enter valid username and password along with remember me checkbox clicked
+ 	Then user should see valid user name populated after logout
+ 
+ Feature: Test forgot password
+ 
+ Scenario: Validate password reset email is sent when user forget password
+ 	When user enter valid username and click forgot password link
+ 	Then user should recieve password reset email to associated email
+ 	
+ 	Feature: LoginError Message
+ 	
+ Scenario: Validate LoginError Message
+ 	When user enter invalid username and password
+ 	Then user should see valid error message
+ 	
+ 	Feature: Home Page for user
+ 	
+ 	Scenario: Select user menu for <username> drop down
+		When After valid login, check for the user menu drop down
+		Then Drop down should contain expected list of menus
+		
+	Feature: User Profile Management
+  As a user,
+  I want to manage my profile settings,
+  So that I can update my information, post content, and upload files.
+
+  Scenario: Navigate to My Profile
+    When user enters valid username and password
+    And After valid login, check for the user menu drop down
+    When User clicks "My Profile"
+    Then The User Profile page should be displayed
+    
+    When User clicks the edit button next to contact information
+    Then Edit profile pop-up window should be displayed and update lastname in the profile page
+    And User enter text in post and share in profile page
+    And User upload a file and share in profile page
+    And User upload a profile photo in profile page
+   
+ 
